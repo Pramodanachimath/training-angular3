@@ -1,0 +1,38 @@
+<!-- <form #loginForm="ngForm" (ngSubmit)="updateData(loginForm.value)">
+    <div class="main">
+        <div class="input-fields">
+            <input name="planName" ngModel placeholder="planName" id="name" type="text"  class="input-field">
+
+        </div>
+           
+    </div>
+</form> -->
+
+<form #loginForm="ngForm" (ngSubmit)="updateData(loginForm.value)">
+    <div class="main">
+        <div class="input-fields">
+            <input name="planName" ngModel placeholder="planName" id="planName" type="text"  class="input-field">
+
+        </div>
+             <input name="Premium" ngModel placeholder="Premium" id="Premium" type="text"  class="input-field">
+        </div>
+
+                <div class="input-fields">
+                    <input name="Coverage" ngModel placeholder="Coverage" id="Coverage" type="text"  class="input-field">
+                </div>
+
+                <div class="input-fields">
+                    <input name="age" ngModel placeholder="age" id="age" type="text"  class="input-field">
+                </div>  
+                <div class="input-fields">
+                    <input name="term" ngModel placeholder="term" id="term" type="text"  class="input-field">
+                </div>  
+                <div class="input-fields">
+                    <input name="amount" ngModel placeholder="amount" id="amount" type="text"  class="input-field">
+                </div>  
+
+                <button>Udate Data</button>
+    <!-- </div>     -->
+
+</form>
+

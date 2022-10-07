@@ -1,0 +1,41 @@
+<div>
+<app-search></app-search>
+    
+    <ol [ngStyle]="{'list-style-type':'none'}">
+       
+      
+        <li *ngFor ="let pensionplan of pensionplans" >
+            <h4>Name: {{pensionplan.planName}}<br>
+                Premium:{{pensionplan.premium}}<br>
+                Coverage:{{pensionplan.coverage}}<br>
+                <button (click)="show(pensionplan.plansId)">Show Details</button>
+            </h4>
+        </li>
+    </ol>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> <br>
+</div>

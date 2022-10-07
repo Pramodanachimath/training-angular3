@@ -1,0 +1,67 @@
+<h1>Add Plans</h1>
+  <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)" novalidate>
+    <table>
+        <tr>
+            <td>
+                <label for="planName">PlanName</label>
+            </td>
+            <td><input type="text" name="planName" #planName="ngModel" [(ngModel)]="pensionplan.planName"  required></td>
+            <span *ngIf="( planName.touched)&&planName.value.length<=0" [ngClass]="'errortext'" [ngStyle]="{'color': 'red'}"
+            >
+               Enter Plan Name
+            </span>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="age">Age</label>
+            </td>
+            <td><input type="age" name="age" #age="ngModel" [(ngModel)]="pensionplan.age"></td>
+            <span *ngIf="( age.touched)&&age.value<18 ||age.value>60" [ngClass]="'errortext'" [ngStyle]="{'color': 'red'}">Enter Age between 18 to 60</span>
+        </tr>
+        <tr>
+        <td>
+            <label for="coverage">Coverage</label>
+        </td>
+        <td>
+            <select name="coverage" [(ngModel)]="pensionplan.coverage">
+                <option value="SINGLE">SINGLE</option>
+                <option value="SHARING">SHARING</option>
+                <option value="PARENTS">PARENTS</option>
+                <option value="SINGLEPLUSHEALTH">SINGLEPLUSHEALTH</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label for="term">Term</label>
+        </td>
+        <td><input type="text" name="term" #term="ngModel" [(ngModel)]="pensionplan.term"></td>
+        <span *ngIf="(term.touched)&&term.value.length<=0" [ngClass]="'errortext'" [ngStyle]="{'color': 'red'}">Enter Term</span>
+
+    </tr>
+    <tr>
+        <td>
+            <label for="premium">Premium</label>
+        </td>
+        <td><input type="text" name="premium" #premium="ngModel" [(ngModel)]="pensionplan.premium"></td>
+        <span *ngIf="(premium.touched)&&premium.value<=500" [ngClass]="'errortext'" [ngStyle]="{'color': 'red'}">Enter Premium above 500</span>
+
+    </tr>
+    
+
+    <tr>
+        <td>
+            <label for="amount">Amount</label>
+        </td>
+        <td><input type="text" name="amount" #amount="ngModel" [(ngModel)]="pensionplan.amount"></td>
+        <span *ngIf="(amount.touched)&&amount.value<=1000" [ngClass]="'errortext'" [ngStyle]="{'color': 'red'}">Enter Amount above 9999</span>
+
+    </tr>
+    
+    <tr>
+        <td><input type="submit" value="Add pensionplan" [disabled]="!addForm.valid"></td>
+    </tr>
+</table></form>
+
